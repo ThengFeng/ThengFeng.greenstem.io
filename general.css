@@ -72,6 +72,11 @@
     text-align: center;
  }
 
+ small{
+   text-decoration: underline;
+
+}
+
  .animation {
     opacity: 0;
  }
@@ -657,10 +662,6 @@
    border-bottom: 2px dotted rgb(166, 166, 166);
 }
 
-small{
-   text-decoration: underline;
-
-}
 .module {
    height: 40vh;
    text-align: center;

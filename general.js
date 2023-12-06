@@ -334,14 +334,67 @@ if (isPhone) {
   });
 
   const multiDropDown = document.querySelectorAll('.submenu')
-  multiDropDown.forEach(dropDown =>{
+  multiDropDown.forEach(dropDown => {
     dropDown.classList.remove('submenu-left');
-    
+
   })
 
 
 
 } else {
+  var workshopCarousel = $(".module-carousel.workshop"),
+  workshopCurrIndex = 0;
+
+$("#workshop-next").on("click", workshopNext);
+$("#workshop-prev").on("click", workshopPrev);
+
+function workshopNext() {
+workshopCurrIndex = (workshopCurrIndex + 1) % 3; // Change to 3 for 3 items
+updateCarousel();
+}
+
+function workshopPrev() {
+workshopCurrIndex = (workshopCurrIndex - 1 + 3) % 3; // Change to 3 for 3 items
+updateCarousel();
+}
+
+function updateCarousel() {
+var rotation = workshopCurrIndex * -120; // Change to -120 for 3 items
+
+workshopCarousel.css({
+  "-webkit-transform": "rotateY(" + rotation + "deg)",
+  "-moz-transform": "rotateY(" + rotation + "deg)",
+  "-o-transform": "rotateY(" + rotation + "deg)",
+  transform: "rotateY(" + rotation + "deg)",
+});
+
+// Remove the 'active' class from all items
+$(".module-carousel-item.workshop").removeClass("active");
+
+// Add the 'active' class to the currently active item
+$(".module-carousel-item.workshop").eq(workshopCurrIndex).addClass("active");
+
+var displayText = $(".module-carousel-item.workshop.active p").text();
+
+// Assuming changeTextWithDelay is a valid function
+changeTextWithDelayW(displayText);
+}
+
+
+
+
+
+
+  function changeTextWithDelayW(newText) {
+    // Display a loading message immediately
+    $("#workshop-displayText").text('Loading...');
+
+    // Set a delay before updating the text
+    setTimeout(function () {
+      $("#workshop-displayText").text(newText);
+    }, 400); // 1000 milliseconds = 1 second
+  }
+
 
   //Spare parts management system carousel//
   var carousel = $(".module-carousel"),
