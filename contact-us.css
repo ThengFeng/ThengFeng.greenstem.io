@@ -1,0 +1,98 @@
+
+
+.feedback .container-fluid {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    height: 75vh;
+}
+.form{
+    margin-top: 2vh;
+    background-color: rgb(242, 255, 233);
+    margin-left: 5vw;
+    padding: 5vh 2vw 1vh 2vw;
+    display: flex;
+    position: relative;
+    height: 55vh;
+}
+label {
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgb(97,97,97);
+    display: block;
+    margin-bottom: 1vh; 
+}
+
+input {
+    display: block;
+    margin-bottom: 3vh; 
+    width: 75%;
+}
+
+.message, .contact-list{
+    width: 50%;
+    padding-left: 5vw;
+    height: 40vh;
+}
+
+textarea{
+    width: 80%;
+    height: 30vh;
+}
+
+.feedback button{
+    position: absolute;
+    font-size: 18px;
+    padding: 1vh 2vw 1vh 2vw;
+    transform:translateX(-50%);
+    bottom: 10%;
+    left: 50%;
+}
+
+.company-contact .container-fluid{
+    display: grid;
+    grid-template-columns: 35% 65%;
+    height: 60vh;
+}
+
+.company-contact .vstack.col-md-5.mx-auto{
+    background-color: rgb(242, 255, 233);
+    height: 55vh;
+    min-height: auto;
+    width: 65%;
+    padding: 2vh 0 0 5vw;
+}
+
+h4{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgb(97,97,97);
+}
+
+.company-contact p{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(97,97,97);
+    padding-left: 2vw;
+}
+
+.container-fluid .text-center{
+    margin: 10% 0 5% 0;
+}
+
+.icon{
+    align-items: center;
+}
+.icon img{
+    padding-top: 15%;
+    padding-left: 5vw;
+    width: 30vw;
+    height: 50vh;
+}
+
+.map{
+    position: relative;
+    z-index: 1;
+}

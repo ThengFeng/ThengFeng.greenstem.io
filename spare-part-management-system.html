@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="textbox/html" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="keywords" content="Accounting Software, Spare Parts System, Workshop System" />
+    <meta name="description"
+        content="An accounting software company in Malaysia. Specifically Designed for spare parts to improve efficiency and productivity." />
+    <title>Spare Parts Management & Accounting System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../greenstem/pic/icon.webp" />
+
+
+    <!--Animate.css library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!--Custom Css-->
+    <!--General-->
+    <link rel="stylesheet" href="../greenstem/general.css">
+    <link rel="stylesheet" href="../greenstem/spare-part-management-system.css">
+
+    <!--JSON ID-->
+    <script type="application/ld+json" src="../greenstem/JSON-ID-script.html"></script>
+    <!--Google icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!--JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <canvas id="vertical"></canvas>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../greenstem/new-index.html">
+                <img src="../greenstem/pic/icon.webp" alt="greenstem logo">
+                <p>Greenstem Business<br> Software SDN BHD</p>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../greenstem/new-index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../greenstem/about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown-center">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Product
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item " href="../greenstem/spare-part-management-system.html">Spare
+                                    Parts Management & Accounting
+                                    System</a></li>
+                            <li><a class="dropdown-item " href="../greenstem/workshop-system.html">Workshop Management
+                                    System</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Tutorial Video
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item nav-dropdown"> &laquo; Maintenance </a>
+                                <ul class="dropdown-menu submenu submenu-left">
+                                    <li><a class="dropdown-item nav-dropdown"
+                                            href="../greenstem/video.html?videoPath=Maintenance/Customer.mp4">Customer</a>
+                                    </li>
+                                    <li><a href="../greenstem/video.html?videoPath=Maintenance/Stock.mp4"
+                                            class="dropdown-item nav-dropdown">Stock</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Maintenance/Supplier.mp4"
+                                            class="dropdown-item nav-dropdown">Supplier</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item nav-dropdown">&laquo; General
+                                    Ledger</a>
+                                <ul class="dropdown-menu submenu submenu-left">
+                                    <li><a href="../greenstem/video.html?videoPath=General Ledger/Bank_Reconciliation.mp4"
+                                            class="dropdown-item nav-dropdown">Bank
+                                            Reconciliation</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=General Ledger/GL-Payment Quick Entry_Latest.mp4"
+                                            class="dropdown-item nav-dropdown">GL-Payment
+                                            Quick Entry Latest</a>
+                                    <li><a href="../greenstem/video.html?videoPath=General Ledger/GL-Receipt_Quick_Entry.mp4"
+                                            class="dropdown-item nav-dropdown">GL-Receipt
+                                            Quick Entry</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=General Ledger/Journal_Entry.mp4"
+                                            class="dropdown-item nav-dropdown">Journal
+                                            Entry</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item nav-dropdown">&laquo; Account
+                                    Receivable</a>
+                                <ul class="dropdown-menu submenu submenu-left">
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/Delivery_Order.mp4"
+                                            class="dropdown-item nav-dropdown">Delivery
+                                            Order</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/Direct_Invoice.mp4"
+                                            class="dropdown-item nav-dropdown">Direct
+                                            Invoice</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/DO-Invoice_Generator.mp4"
+                                            class="dropdown-item nav-dropdown">DO-Invoice
+                                            Generator</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/Invoice_Posting.mp4"
+                                            class="dropdown-item nav-dropdown">Invoice
+                                            Posting</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/Receivable_Credit_Note.mp4"
+                                            class="dropdown-item nav-dropdown">Receivable
+                                            Credit Note</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/Receivable_Debit_Note.mp4"
+                                            class="dropdown-item nav-dropdown">Receivable
+                                            Debit Note</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/Receivable_Receipt.mp4"
+                                            class="dropdown-item nav-dropdown">Receivable
+                                            Receipt</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Receivable/Receivable_Report.mp4"
+                                            class="dropdown-item nav-dropdown">Receivable
+                                            Report</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item nav-dropdown">&laquo; Account
+                                    Payable</a>
+                                <ul class="dropdown-menu submenu submenu-left">
+                                    <li><a href="../greenstem/video.html?videoPath=Account Payable/Payable_Credit_Note.mp4"
+                                            class="dropdown-item nav-dropdown">Payable
+                                            Credit Note</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Payable/Payable_Debit_Note.mp4"
+                                            class="dropdown-item nav-dropdown">Payable
+                                            Debot Note</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Payable/Payable_Invoice.mp4"
+                                            class="dropdown-item nav-dropdown">Payable
+                                            Invoice</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Payable/Payable_Payment.mp4"
+                                            class="dropdown-item nav-dropdown">Payable
+                                            Payment</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Account Payable/Payable_Report.mp4"
+                                            class="dropdown-item nav-dropdown">Payable
+                                            Report</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item nav-dropdown">&laquo;
+                                    Inventory</a>
+                                <ul class="dropdown-menu submenu submenu-left">
+                                    <li><a href="../greenstem/video.html?videoPath=Inventory/Direct_Purchase.mp4"
+                                            class="dropdown-item nav-dropdown">Direct
+                                            Purchase</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Inventory/Purchase_Return.mp4"
+                                            class="dropdown-item nav-dropdown">Purchase
+                                            Return</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Inventory/Stock_Check_Entry.mp4"
+                                            class="dropdown-item nav-dropdown">Stock Check
+                                            Entry</a></li>
+                                    <li><a href="../greenstem/video.html?videoPath=Inventory/Stock_Check_Transaction.mp4"
+                                            class="dropdown-item nav-dropdown">Stock
+                                            Check Transaction</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item nav-dropdown">&laquo;
+                                    Workshop</a>
+                                <ul class="dropdown-menu submenu submenu-left">
+                                    <li><a href="../greenstem/video.html?videoPath=Workshop/Register No Training Video Enhanced vers.mp4"
+                                            class="dropdown-item nav-dropdown">Register
+                                            No Training Video
+                                            Enhanced vers</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../greenstem/contact-us.html" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="demo"> <a href="https://forms.gle/uW4YrCiEsLy6xrTa6">Free Demo</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="faq-container">
+        <div class="faq-toggler"> &laquo; F A Q</div>
+
+        <div class="faq-content">
+            <header>
+                <h2>F A Q </h2><span class="close-btn material-symbols-outlined">close</span>
+            </header>
+            <div class="accordion accordion-flush" id="accordionFlushFAQ">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <strong>What services does Greenstem offer?</strong>
+                        </button>
+                    </h3>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushFAQ">
+                        <div class="accordion-body">Greenstem specializes in web, mobile, and desktop applications with a focus on accounting and inventory control.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <strong>How does Greenstem prioritize client success?</strong>
+                        </button>
+                    </h3>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushFAQ">
+                        <div class="accordion-body">Greenstem is dedicated to providing expert services, comprehensive training, and after-sales support.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            <strong>What is Greenstem's approach to innovation?</strong>
+                        </button>
+                    </h3>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushFAQ">
+                        <div class="accordion-body">Greenstem is committed to integrating new technologies to enhance efficiency and customer satisfaction.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour" aria-expanded="false"
+                            aria-controls="flush-collapseFour">
+                            <strong>What are Greenstem's business hours?</strong>
+                        </button>
+                    </h3>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushFAQ">
+                        <div class="accordion-body">Greenstem operates from Monday to Friday, with business hours from 9:00 am to 6:00 pm.</div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive" aria-expanded="false"
+                            aria-controls="flush-collapseFive">
+                            <strong>How can I contact Greenstem?</strong>
+                        </button>
+                    </h3>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushFAQ">
+                        <div class="accordion-body">You can reach Greenstem at the following: <br>
+                        <ul>
+                            <li>Address: A-3-3A, Block A, Ativo Plaza, No. 1, Jalan PJU 9/1, Bandar Sri Damansara, 52200 Kuala Lumpur.</li>
+                            <li>Phone: +60362633933</li>
+                            <li>Email: <br>
+                                admin@greenstem.com.my <br>
+                                richard_phoon@yahoo.com <br>
+                                gbssb@yahoo.com</li>
+                    
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSix" aria-expanded="false"
+                            aria-controls="flush-collapseSix">
+                            <strong>How can I obtain a price quote from Greenstem?</strong>
+                        </button>
+                    </h3>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushFAQ">
+                        <div class="accordion-body">Prices are tailored based on individual customer requirements. Please contact us to receive a personalized quotation. 
+                            <br><a href="../greenstem/contact-us.html">Contact Us Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="intro container-fluid">
+                <img src="../greenstem/pic/spareparts&acconting-system.png"
+                    alt="spare parts managemnet & accounting system">
+                <div class="title container-fluid">
+                    <h2 class="animation" data-animation="bounce">Spare Parts Management <br>& <br>Accounting System
+                    </h2>
+                    <p>Our system, tailored for spare parts companies, boosts efficiency with real-time inventory
+                        management, automated orders, and streamlined accounting. User-friendly and automated, it
+                        minimizes manual work, reduces errors, and optimizes cost control for a competitive advantage.
+                    </p>
+                </div>
+            </div>
+
+            <div class="features container-fluid">
+                <h2 class="animation" data-animation="bounce">Highlight Features</h2>
+                <div class="features-content">
+                    <div class="textbox left top">
+                        <h3>Smartphone Check Stock <br> & <br>Send Sales Order </h3>
+                    </div>
+                    <div class="textbox right top">
+                        <h3>Provide Sufficient <br>Information for <br>Decision Making </h3>
+                    </div>
+                    <div class="textbox left">
+                        <h3>Document Entry/ Amend/ <br>Delete Tracking</h3>
+                    </div>
+                    <div class="textbox right">
+                        <h3>Data Migration <br>from Other System</h3>
+                    </div>
+
+                </div>
+                <small><i>Discover all the feature</i></small>
+
+            </div>
+
+            <div class="module container-fluid">
+                <div class="module-content">
+                    <h2 class="animation" data-animation="bounce">Component of Our System</h2>
+                    <p id="displayText">Elevate your operations with our advance module, designed for seamless
+                        efficiency and optimal
+                        performance </p>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="module-carousel">
+                        <div class="module-carousel-item stock-system">
+                            <h3>Stock <br> System</h3>
+                            <p>Integrating effortlessly with our stock system, we streamline inventory management,
+                                providing a comprehensive solution for efficient tracking and control of stock levels.
+                            </p>
+                        </div>
+                        <div class="module-carousel-item general-ledger">
+                            <h3>General <br> Ledger</h3>
+                            <p>Integrated seamlessly, our General Ledger module simplifies transaction recording and
+                                organization, providing a streamlined overview of financial data for efficient spare
+                                part operations.</p>
+                        </div>
+                        <div class="module-carousel-item account-receivable">
+                            <h3>Account <br> Receivable</h3>
+                            <p>Effortlessly manage accounts receivable with our system, ensuring a streamlined and
+                                efficient tracking process for outstanding payments.</p>
+                        </div>
+                        <div class="module-carousel-item bill-of-material">
+                            <h3>Bill <br> of Material</h3>
+                            <p>Efficiently structure your production processes with our Bill of Materials system,
+                                streamlining the assembly and management of components for optimal manufacturing
+                                workflows.</p>
+                        </div>
+                        <div class="module-carousel-item account-payable">
+                            <h3>Account <br> Payable</h3>
+                            <p>Effortlessly handle accounts payable with our system, ensuring streamlined tracking and
+                                efficient management of outgoing payments.</p>
+                        </div>
+                        <div class="module-carousel-item sales-order">
+                            <h3>Sales <br> Order</h3>
+                            <p>Simplify your sales process with our Sales Order system, streamlining order management
+                                for efficient and organized transactions.</p>
+                        </div>
+                        <div class="module-carousel-item purchase-order">
+                            <h3>Purchase <br> Order</h3>
+                            <p>Simplify procurement with our Purchase Order system, streamlining the ordering process
+                                for efficient and organized transactions.</p>
+                        </div>
+                        <div class="module-carousel-item stock-claim">
+                            <h3>Stock <br> Claim</h3>
+                            <p>Facilitate stock claims effortlessly with our streamlined system, ensuring efficient
+                                tracking and resolution for seamless inventory management.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <span class="material-symbols-outlined" id="next">
+                    chevron_right
+                </span>
+                <span class="material-symbols-outlined" id="prev">
+                    chevron_left
+                </span>
+
+            </div>
+
+            <div class="preview">
+                <div class="container-fluid">
+                    <div class="dropdown-center">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <h2 class="animation" data-animation="bounce">Product Preview</h2>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item product-review" data-target="invoice-entry">Invoive Entry</li>
+                            <li class="dropdown-item product-review" data-target="transcation-detail">Transaction Detail
+                                Analysis</li>
+                            <li class="dropdown-item product-review" data-target="goods-received">Goods Received</li>
+                            <li class="dropdown-item product-review" data-target="sales-order">Sales Order</li>
+                            <li class="dropdown-item product-review" data-target="stock-enquiry">Stock Enquiry</li>
+                        </ul>
+                    </div>
+
+                    <div id="invoice-entry" class="description active animate__animated">
+                        <div class="image">
+                            <img src="../greenstem/pic/Invoice-entry.png" alt="invoice entry preview">
+                            <small>Invoice Entry</small>
+                        </div>
+
+                        <div class="description-text">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p>Billing to customer</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Show issue personal, date and timeInformation from quotation, sales order or
+                                        delivery order
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Display stock information</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Customer Ledger can view over here </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div id="transcation-detail" class="description animate__animated">
+                        <div class="image">
+                            <img src="../greenstem/pic/transaction_detail.png.png.png"
+                                alt="Transaction detail analysis preview">
+                            <small>Transaction Detail Analysis</small>
+                        </div>
+
+                        <div class="description-text">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p>Stock Quantity and Cost</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Sales Order and Purchase Ordre back order quantity
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Detail of transaction to display</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Total In/Out quantity for the selected period </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Stock price list - for user with more than 6 types of selling price </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div id="goods-received" class="description animate__animated">
+                        <div class="image">
+                            <img src="../greenstem/pic/goods_received.png.png.png" alt="Goods Received preview">
+                            <small>Goods Received</small>
+                        </div>
+
+                        <div class="description-text">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p>Stock information with latest goods received unit cost, GST inclusive/exclusive,
+                                        date and quantity received
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Supplier cost detail with date, quantity, unit cost, currency and GST
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Shows stock movement for the item, refer 'Transaction Detail'
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Excel file import / export</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div id="sales-order" class="description animate__animated">
+                        <div class="image">
+                            <img src="../greenstem/pic/sales_order.jpg.jpg.jpg" alt="Sales Order preview">
+                            <small>Sales Oredr</small>
+                        </div>
+
+                        <div class="description-text">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p>Check stock information, price, picture , online quantity
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Sales history with date, customer name, quantity, unit price
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Issue sales order off line, send to office when internet available
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Print sales order in office to pick up
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Issue D/O or Invoice in office by extract data from sales order
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div id="stock-enquiry" class="description animate__animated">
+                        <div class="image">
+                            <img src="../greenstem/pic/stock_enquiry.png.png.png" alt="Stock Enquiry preview">
+                            <small>Stock Enquiry</small>
+                        </div>
+
+                        <div class="description-text">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p>Search item with combination of stock code, description, brand, model, oem no,
+                                        interchangeno, etc.
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Show interchange, superseded number, other car model using this stock
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Pictures of the stock</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Show stock quantity, selling price, brand
+                                    </p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>Multiple button for more information</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <footer class="container-fluid">
+        <div class="logo">
+            <img src="../greenstem/pic/icon.webp" alt="company logo">
+        </div>
+        <div class="text-area">
+            <p class="text-end">
+                <b>P</b> : (6)03 6263 3933 &nbsp;&nbsp;&nbsp;
+                <b>E</b> : admin@greenstem.com.my<br>
+            </p>
+            <p class="text-end"> ©2023 Greenstem Business Software Sdn Bhd (387389-H) - All rights reserved</p>
+        </div>
+
+
+    </footer>
+
+    <script src="../greenstem/general.js"></script>
+</body>
+
+</html>
