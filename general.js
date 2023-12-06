@@ -320,6 +320,12 @@ if (isPhone) {
 
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    var sparePartBG = document.querySelector('.sparePart-background')
+    sparePartBG.src = '../greenstem/pic/spareparts&acconting-system-phone.png'
+
+  });
+
   const footerTextList = document.querySelectorAll('.footer-text');
 
   footerTextList.forEach(footerText => {
