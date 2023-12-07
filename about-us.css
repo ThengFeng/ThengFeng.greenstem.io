@@ -1,4 +1,4 @@
-.intro {
+.intro.about-us {
     background-image: url('../greenstem/pic/greenstem-group-photo.JPG');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -6,7 +6,7 @@
 }
 
 
-.intro,
+.intro.about-us,
 .gallery {
     display: block;
     position: relative;
@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-.intro .container-fluid {
+.intro.about-us .container-fluid {
     position: absolute;
     bottom: 0;
     height: 30vh;
@@ -159,5 +159,5 @@
 }
 
  .text-box.animation{
-    --animate-duration: 3s;
+    --animate-duration: 2.5s;
 }

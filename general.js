@@ -2,180 +2,184 @@
 // horizon wave //
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('horizon');
-  const c = canvas.getContext('2d');
+  if (canvas) {
+    const c = canvas.getContext('2d');
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-  const waves = [
-    {
-      y: 383,
-      length: 0.002,
-      amplitude: -81,
-      frequency: 0.01,
-      radius: 100,
-      color: {
-        r: 7,
-        g: 118,
-        b: 50
+    const waves = [
+      {
+        y: 383,
+        length: 0.002,
+        amplitude: -81,
+        frequency: 0.01,
+        radius: 100,
+        color: {
+          r: 7,
+          g: 118,
+          b: 50
+        }
+      },
+      {
+        y: 344,
+        length: 0.003,
+        amplitude: 100,
+        frequency: 0.02,
+        radius: 133,
+        color: {
+          r: 61,
+          g: 143,
+          b: 97
+        }
+      },
+      {
+        y: 439,
+        length: -0.001,
+        amplitude: 100,
+        frequency: 0.02,
+        radius: 100,
+        color: {
+          r: 239,
+          g: 145,
+          b: 67
+        }
       }
-    },
-    {
-      y: 344,
-      length: 0.003,
-      amplitude: 100,
-      frequency: 0.02,
-      radius: 133,
-      color: {
-        r: 61,
-        g: 143,
-        b: 97
-      }
-    },
-    {
-      y: 439,
-      length: -0.001,
-      amplitude: 100,
-      frequency: 0.02,
-      radius: 100,
-      color: {
-        r: 239,
-        g: 145,
-        b: 67
-      }
+    ];
+
+    const background = {
+      r: 255,
+      g: 250,
+      b: 242,
+      a: 0.01
+    };
+
+    function updateColor() {
+      // Handle color changes
     }
-  ];
 
-  const background = {
-    r: 255,
-    g: 250,
-    b: 242,
-    a: 0.01
-  };
+    let increment = waves[0].frequency;
 
-  function updateColor() {
-    // Handle color changes
+    function animate() {
+      requestAnimationFrame(animate);
+      c.fillStyle = `rgba(${background.r}, ${background.g}, ${background.b}, ${background.a})`;
+      c.fillRect(0, 0, canvas.width, canvas.height);
+
+      waves.forEach((wave, index) => {
+        c.beginPath();
+        c.moveTo(0, wave.y);
+
+        for (let i = 0; i < canvas.width; i++) {
+          const x = i;
+          const y =
+            wave.y +
+            Math.sin(i * wave.length + increment) *
+            wave.amplitude *
+            Math.sin(increment) +
+            Math.sin(i * wave.length) * wave.radius;
+
+          c.lineTo(x, y);
+        }
+
+        c.strokeStyle = `rgb(${wave.color.r}, ${wave.color.g}, ${wave.color.b})`;
+        c.stroke();
+      });
+
+      increment += waves[0].frequency;
+    }
+
+    animate();
   }
-
-  let increment = waves[0].frequency;
-
-  function animate() {
-    requestAnimationFrame(animate);
-    c.fillStyle = `rgba(${background.r}, ${background.g}, ${background.b}, ${background.a})`;
-    c.fillRect(0, 0, canvas.width, canvas.height);
-
-    waves.forEach((wave, index) => {
-      c.beginPath();
-      c.moveTo(0, wave.y);
-
-      for (let i = 0; i < canvas.width; i++) {
-        const x = i;
-        const y =
-          wave.y +
-          Math.sin(i * wave.length + increment) *
-          wave.amplitude *
-          Math.sin(increment) +
-          Math.sin(i * wave.length) * wave.radius;
-
-        c.lineTo(x, y);
-      }
-
-      c.strokeStyle = `rgb(${wave.color.r}, ${wave.color.g}, ${wave.color.b})`;
-      c.stroke();
-    });
-
-    increment += waves[0].frequency;
-  }
-
-  animate();
 });
 //horizon wave end//
 
 //vertical wave//
 document.addEventListener('DOMContentLoaded', () => {
   const verticalCanvas = document.getElementById('vertical');
-  const verticalContext = verticalCanvas.getContext('2d');
+  if (verticalCanvas) {
+    const verticalContext = verticalCanvas.getContext('2d');
 
-  verticalCanvas.width = window.innerWidth;
-  verticalCanvas.height = window.innerHeight;
+    verticalCanvas.width = window.innerWidth;
+    verticalCanvas.height = window.innerHeight;
 
-  const verticalWaves = [
-    {
-      x: 206,
-      length: -0.007,
-      amplitude: -142,
-      frequency: -0.01,
-      radius: 73,
-      color: {
-        r: 7,
-        g: 118,
-        b: 50
+    const verticalWaves = [
+      {
+        x: 206,
+        length: -0.007,
+        amplitude: -142,
+        frequency: -0.01,
+        radius: 73,
+        color: {
+          r: 7,
+          g: 118,
+          b: 50
+        }
+      },
+      {
+        x: 242,
+        length: -0.003,
+        amplitude: 109,
+        frequency: 0.02,
+        radius: 56,
+        color: {
+          r: 61,
+          g: 143,
+          b: 97
+        }
+      },
+      {
+        x: 170,
+        length: 0.003,
+        amplitude: 102,
+        frequency: 0.03,
+        radius: 120,
+        color: {
+          r: 239,
+          g: 145,
+          b: 67
+        }
       }
-    },
-    {
-      x: 242,
-      length: -0.003,
-      amplitude: 109,
-      frequency: 0.02,
-      radius: 56,
-      color: {
-        r: 61,
-        g: 143,
-        b: 97
-      }
-    },
-    {
-      x: 170,
-      length: 0.003,
-      amplitude: 102,
-      frequency: 0.03,
-      radius: 120,
-      color: {
-        r: 239,
-        g: 145,
-        b: 67
-      }
+    ];
+
+    const verticalBackground = {
+      r: 255,
+      g: 250,
+      b: 242,
+      a: 0.01
+    };
+
+    let verticalIncrement = verticalWaves[0].frequency;
+
+    function animateVertical() {
+      requestAnimationFrame(animateVertical);
+      verticalContext.fillStyle = `rgba(${verticalBackground.r}, ${verticalBackground.g}, ${verticalBackground.b}, ${verticalBackground.a})`;
+      verticalContext.fillRect(0, 0, verticalCanvas.width, verticalCanvas.height);
+
+      verticalWaves.forEach((wave, index) => {
+        verticalContext.beginPath();
+        verticalContext.moveTo(wave.x, 0);
+
+        for (let i = 0; i < verticalCanvas.height; i++) {
+          const x =
+            wave.x +
+            Math.sin(i * wave.length + verticalIncrement) *
+            wave.amplitude *
+            Math.sin(verticalIncrement) +
+            Math.sin(i * wave.length) * wave.radius;
+
+          const y = i;
+          verticalContext.lineTo(x, y);
+        }
+
+        verticalContext.strokeStyle = `rgb(${wave.color.r}, ${wave.color.g}, ${wave.color.b})`;
+        verticalContext.stroke();
+      });
+
+      verticalIncrement += verticalWaves[0].frequency;
     }
-  ];
 
-  const verticalBackground = {
-    r: 255,
-    g: 250,
-    b: 242,
-    a: 0.01
-  };
-
-  let verticalIncrement = verticalWaves[0].frequency;
-
-  function animateVertical() {
-    requestAnimationFrame(animateVertical);
-    verticalContext.fillStyle = `rgba(${verticalBackground.r}, ${verticalBackground.g}, ${verticalBackground.b}, ${verticalBackground.a})`;
-    verticalContext.fillRect(0, 0, verticalCanvas.width, verticalCanvas.height);
-
-    verticalWaves.forEach((wave, index) => {
-      verticalContext.beginPath();
-      verticalContext.moveTo(wave.x, 0);
-
-      for (let i = 0; i < verticalCanvas.height; i++) {
-        const x =
-          wave.x +
-          Math.sin(i * wave.length + verticalIncrement) *
-          wave.amplitude *
-          Math.sin(verticalIncrement) +
-          Math.sin(i * wave.length) * wave.radius;
-
-        const y = i;
-        verticalContext.lineTo(x, y);
-      }
-
-      verticalContext.strokeStyle = `rgb(${wave.color.r}, ${wave.color.g}, ${wave.color.b})`;
-      verticalContext.stroke();
-    });
-
-    verticalIncrement += verticalWaves[0].frequency;
+    animateVertical();
   }
-
-  animateVertical();
 });
 //vertival wave end//
 
@@ -309,94 +313,8 @@ the_animation.forEach((element) => {
 
 //animation when observe end//
 
-
-
-if (isPhone) {
-  console.log('phone');
-
-  document.addEventListener("DOMContentLoaded", function () {
-    var benefitBG = document.querySelector('.benefit-background')
-    benefitBG.src = '../greenstem/pic/customer_servies_phone-bg.jpg'
-
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    var sparePartBG = document.querySelector('.sparePart-background')
-    sparePartBG.src = '../greenstem/pic/spareparts&acconting-system-phone.png'
-
-  });
-
-  const footerTextList = document.querySelectorAll('.footer-text');
-
-  footerTextList.forEach(footerText => {
-    footerText.classList.remove('text-end');
-    footerText.classList.add('text-center');
-  });
-
-  const multiDropDown = document.querySelectorAll('.submenu')
-  multiDropDown.forEach(dropDown => {
-    dropDown.classList.remove('submenu-left');
-
-  })
-
-
-
-} else {
-  var workshopCarousel = $(".module-carousel.workshop"),
-  workshopCurrIndex = 0;
-
-$("#workshop-next").on("click", workshopNext);
-$("#workshop-prev").on("click", workshopPrev);
-
-function workshopNext() {
-workshopCurrIndex = (workshopCurrIndex + 1) % 3; // Change to 3 for 3 items
-updateCarousel();
-}
-
-function workshopPrev() {
-workshopCurrIndex = (workshopCurrIndex - 1 + 3) % 3; // Change to 3 for 3 items
-updateCarousel();
-}
-
-function updateCarousel() {
-var rotation = workshopCurrIndex * -120; // Change to -120 for 3 items
-
-workshopCarousel.css({
-  "-webkit-transform": "rotateY(" + rotation + "deg)",
-  "-moz-transform": "rotateY(" + rotation + "deg)",
-  "-o-transform": "rotateY(" + rotation + "deg)",
-  transform: "rotateY(" + rotation + "deg)",
-});
-
-// Remove the 'active' class from all items
-$(".module-carousel-item.workshop").removeClass("active");
-
-// Add the 'active' class to the currently active item
-$(".module-carousel-item.workshop").eq(workshopCurrIndex).addClass("active");
-
-var displayText = $(".module-carousel-item.workshop.active p").text();
-
-// Assuming changeTextWithDelay is a valid function
-changeTextWithDelayW(displayText);
-}
-
-
-
-
-
-
-  function changeTextWithDelayW(newText) {
-    // Display a loading message immediately
-    $("#workshop-displayText").text('Loading...');
-
-    // Set a delay before updating the text
-    setTimeout(function () {
-      $("#workshop-displayText").text(newText);
-    }, 400); // 1000 milliseconds = 1 second
-  }
-
-
-  //Spare parts management system carousel//
+//Spare parts management system carousel//
+document.addEventListener("DOMContentLoaded", function () {
   var carousel = $(".module-carousel"),
     currdeg = 0;
 
@@ -441,9 +359,9 @@ changeTextWithDelayW(displayText);
       $("#displayText").text(newText);
     }, 400); // 1000 milliseconds = 1 second
   }
+});
 
-  //Spare parts management system carousel end//
-
+//Spare parts management system carousel end//
 
   //product review//
   document.querySelectorAll(".product-review").forEach(item => {
@@ -465,9 +383,78 @@ changeTextWithDelayW(displayText);
   }
   //product review end//
 
+    //workshop coursal//
+    var workshopCarousel = $(".module-carousel.workshop"),
+    workshopCurrIndex = 0;
 
-  //home page scrollSource animation//
-  document.addEventListener("DOMContentLoaded", function () {
+  $("#workshop-next").on("click", workshopNext);
+  $("#workshop-prev").on("click", workshopPrev);
+
+  function workshopNext() {
+    workshopCurrIndex = (workshopCurrIndex + 1) % 3; // Change to 3 for 3 items
+    updateCarousel();
+  }
+
+  function workshopPrev() {
+    workshopCurrIndex = (workshopCurrIndex - 1 + 3) % 3; // Change to 3 for 3 items
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    var rotation = workshopCurrIndex * -120; // Change to -120 for 3 items
+
+    workshopCarousel.css({
+      "-webkit-transform": "rotateY(" + rotation + "deg)",
+      "-moz-transform": "rotateY(" + rotation + "deg)",
+      "-o-transform": "rotateY(" + rotation + "deg)",
+      transform: "rotateY(" + rotation + "deg)",
+    });
+
+    // Remove the 'active' class from all items
+    $(".module-carousel-item.workshop").removeClass("active");
+
+    // Add the 'active' class to the currently active item
+    $(".module-carousel-item.workshop").eq(workshopCurrIndex).addClass("active");
+
+    var displayText = $(".module-carousel-item.workshop.active p").text();
+
+    changeTextWithDelayW(displayText);
+  }
+  function changeTextWithDelayW(newText) {
+    // Display a loading message immediately
+    $("#workshop-displayText").text('Loading...');
+
+    // Set a delay before updating the text
+    setTimeout(function () {
+      $("#workshop-displayText").text(newText);
+    }, 400); // 1000 milliseconds = 1 second
+  }
+
+  
+  //time line line animation//
+  document.addEventListener('DOMContentLoaded', function () {
+    var lines = document.querySelectorAll('.timeLine .timeline-container .line');
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          setTimeout(function () {
+            entry.target.classList.remove('active');
+          }, 1500);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    lines.forEach(function (line) {
+      observer.observe(line);
+    });
+  });
+  //time line line animation end//
+
+   //home page scrollSource animation//
+   document.addEventListener("DOMContentLoaded", function () {
     var scrollSource = document.querySelector('.auto-scroll');
     var nextContainer = document.querySelector('.auto-scroll-target');
     var animated = false;
@@ -516,28 +503,39 @@ changeTextWithDelayW(displayText);
   //home page scrollSource animation end//
 
 
+if (isPhone) {
+  console.log('phone');
 
-  //time line line animation//
-  document.addEventListener('DOMContentLoaded', function () {
-    var lines = document.querySelectorAll('.timeLine .timeline-container .line');
+  document.addEventListener("DOMContentLoaded", function () {
+    var benefitBG = document.querySelector('.benefit-background');
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        } else {
-          setTimeout(function () {
-            entry.target.classList.remove('active');
-          }, 1500);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    lines.forEach(function (line) {
-      observer.observe(line);
-    });
+    // Check if the element is not null before setting its properties
+    if (benefitBG) {
+      benefitBG.src = '../greenstem/pic/customer_servies_phone-bg.jpg';
+    }
   });
-  //time line line animation end//
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var sparePartBG = document.querySelector('.sparePart-background')
+
+    if (sparePartBG) {
+      sparePartBG.src = '../greenstem/pic/spareparts&acconting-system-phone.png';
+    }
+  });
+
+  const footerTextList = document.querySelectorAll('.footer-text');
+
+  footerTextList.forEach(footerText => {
+    footerText.classList.remove('text-end');
+    footerText.classList.add('text-center');
+  });
+
+  const multiDropDown = document.querySelectorAll('.submenu')
+  multiDropDown.forEach(dropDown => {
+    dropDown.classList.remove('submenu-left');
+
+  })
+
 
 
 }
