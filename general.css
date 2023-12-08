@@ -184,7 +184,7 @@
     gap: 10vw;
     font-size: 12px;
     padding-top: 1%;
-    z-index: 2;
+    z-index: 2;position: relative;
  }
 
  .text-area {
@@ -794,9 +794,9 @@
  }
 
  .preview {
-    height: 100vh;
+    height: max-content;
     text-align: center;
-    padding-top: 10vh;
+    padding-top: 15vh;
  }
 
 
@@ -817,6 +817,7 @@
 
  .preview .container-fluid .description {
     display: none;
+    height: max-content;
  }
 
  .description .image {
@@ -835,6 +836,8 @@
 
  .description .image small {
     text-align: center;
+    height: max-content;
+    padding-bottom: 5%;
  }
 
  .description-text {

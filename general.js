@@ -318,74 +318,78 @@ document.addEventListener("DOMContentLoaded", function () {
   var carousel = $(".module-carousel"),
     currdeg = 0;
 
-  $("#next").on("click", { d: "n" }, rotate);
-  $("#prev").on("click", { d: "p" }, rotate);
+  if (carousel) {
+    $("#next").on("click", { d: "n" }, rotate);
+    $("#prev").on("click", { d: "p" }, rotate);
 
-  function rotate(e) {
-    if (e.data.d == "n") {
-      currdeg = currdeg + 45;
+    function rotate(e) {
+      if (e.data.d == "n") {
+        currdeg = currdeg + 45;
+      }
+      if (e.data.d == "p") {
+        currdeg = currdeg - 45;
+      }
+      carousel.css({
+        "-webkit-transform": "rotateY(" + -currdeg + "deg)",
+        "-moz-transform": "rotateY(" + -currdeg + "deg)",
+        "-o-transform": "rotateY(" + -currdeg + "deg)",
+        "transform": "rotateY(" + -currdeg + "deg)"
+      });
+
+      // Remove the 'active' class from all items
+      $(".module-carousel-item").removeClass("active");
+
+      // Calculate the index of the currently active item
+      var activeIndex = Math.floor(currdeg / 45) % 8;
+
+      // Add the 'active' class to the currently active item
+      $(".module-carousel-item").eq(activeIndex).addClass("active");
+
+      displayText = $(".module-carousel-item.active p").text();
+
+      changeTextWithDelay(displayText);
+
     }
-    if (e.data.d == "p") {
-      currdeg = currdeg - 45;
+
+    function changeTextWithDelay(newText) {
+      // Display a loading message immediately
+      $("#displayText").text('Loading...');
+
+      // Set a delay before updating the text
+      setTimeout(function () {
+        $("#displayText").text(newText);
+      }, 400); // 1000 milliseconds = 1 second
     }
-    carousel.css({
-      "-webkit-transform": "rotateY(" + -currdeg + "deg)",
-      "-moz-transform": "rotateY(" + -currdeg + "deg)",
-      "-o-transform": "rotateY(" + -currdeg + "deg)",
-      "transform": "rotateY(" + -currdeg + "deg)"
-    });
-
-    // Remove the 'active' class from all items
-    $(".module-carousel-item").removeClass("active");
-
-    // Calculate the index of the currently active item
-    var activeIndex = Math.floor(currdeg / 45) % 8;
-
-    // Add the 'active' class to the currently active item
-    $(".module-carousel-item").eq(activeIndex).addClass("active");
-
-    displayText = $(".module-carousel-item.active p").text();
-
-    changeTextWithDelay(displayText);
-
-  }
-
-  function changeTextWithDelay(newText) {
-    // Display a loading message immediately
-    $("#displayText").text('Loading...');
-
-    // Set a delay before updating the text
-    setTimeout(function () {
-      $("#displayText").text(newText);
-    }, 400); // 1000 milliseconds = 1 second
   }
 });
 
 //Spare parts management system carousel end//
 
-  //product review//
-  document.querySelectorAll(".product-review").forEach(item => {
-    item.addEventListener('click', function () {
-      showContent(this.dataset.target);
-    })
+//product review//
+document.querySelectorAll(".product-review").forEach(item => {
+  item.addEventListener('click', function () {
+    showContent(this.dataset.target);
   })
+})
 
-  function showContent(contentID) {
-    var allContent = document.querySelectorAll('.description');
-    allContent.forEach(function (content) {
-      content.classList.remove('active')
-    });
+function showContent(contentID) {
+  var allContent = document.querySelectorAll('.description');
+  allContent.forEach(function (content) {
+    content.classList.remove('active')
+  });
 
-    var selectedContent = document.getElementById(contentID);
-    if (selectedContent) {
-      selectedContent.classList.add('active', 'animate__fadeInUp')
-    }
+  var selectedContent = document.getElementById(contentID);
+  if (selectedContent) {
+    selectedContent.classList.add('active', 'animate__fadeInUp')
   }
-  //product review end//
+}
+//product review end//
 
-    //workshop coursal//
-    var workshopCarousel = $(".module-carousel.workshop"),
-    workshopCurrIndex = 0;
+//workshop coursal//
+var workshopCarousel = $(".module-carousel.workshop"),
+  workshopCurrIndex = 0;
+
+if (workshopCarousel) {
 
   $("#workshop-next").on("click", workshopNext);
   $("#workshop-prev").on("click", workshopPrev);
@@ -420,6 +424,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     changeTextWithDelayW(displayText);
   }
+
   function changeTextWithDelayW(newText) {
     // Display a loading message immediately
     $("#workshop-displayText").text('Loading...');
@@ -429,12 +434,13 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#workshop-displayText").text(newText);
     }, 400); // 1000 milliseconds = 1 second
   }
+}
 
-  
-  //time line line animation//
-  document.addEventListener('DOMContentLoaded', function () {
-    var lines = document.querySelectorAll('.timeLine .timeline-container .line');
+//time line line animation//
+document.addEventListener('DOMContentLoaded', function () {
+  var lines = document.querySelectorAll('.timeLine .timeline-container .line');
 
+  if (lines) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -450,57 +456,61 @@ document.addEventListener("DOMContentLoaded", function () {
     lines.forEach(function (line) {
       observer.observe(line);
     });
-  });
-  //time line line animation end//
+  }
+});
+//time line line animation end//
 
-   //home page scrollSource animation//
-   document.addEventListener("DOMContentLoaded", function () {
-    var scrollSource = document.querySelector('.auto-scroll');
-    var nextContainer = document.querySelector('.auto-scroll-target');
-    var animated = false;
+//home page scrollSource animation//
+document.addEventListener("DOMContentLoaded", function () {
+  var scrollSource = document.querySelector('.auto-scroll');
+  var nextContainer = document.querySelector('.auto-scroll-target');
+  var animated = false;
 
-    window.addEventListener('scroll', function () {
-      // Get the scroll position
-      var scrollPosition = window.scrollY;
+  if(scrollSource && nextContainer){
 
-      // Adjust this value based on when you want the animation to trigger
-      var triggerPosition = 100;
+  window.addEventListener('scroll', function () {
+    // Get the scroll position
+    var scrollPosition = window.scrollY;
 
-      // Check if the scroll position is below the trigger position
-      if (scrollPosition > triggerPosition && !animated) {
-        scrollSource.classList.add('animate__animated', 'animate__backOutUp');
-        animated = true; // Set a flag to prevent the animation from being applied multiple times
+    // Adjust this value based on when you want the animation to trigger
+    var triggerPosition = 100;
 
-        // Scroll to the next container until it fills 80% of the screen height
-        animateScrollTo(nextContainer.offsetTop + nextContainer.offsetHeight * 0.001);
-      } else if (scrollPosition <= triggerPosition && animated) {
-        scrollSource.classList.remove('animate__backOutUp');
-        scrollSource.classList.add('animate__backInDown');
+    // Check if the scroll position is below the trigger position
+    if (scrollPosition > triggerPosition && !animated) {
+      scrollSource.classList.add('animate__animated', 'animate__backOutUp');
+      animated = true; // Set a flag to prevent the animation from being applied multiple times
 
-        animated = false; // Set a flag to allow the animation to be applied again
-      }
-    });
+      // Scroll to the next container until it fills 80% of the screen height
+      animateScrollTo(nextContainer.offsetTop + nextContainer.offsetHeight * 0.001);
+    } else if (scrollPosition <= triggerPosition && animated) {
+      scrollSource.classList.remove('animate__backOutUp');
+      scrollSource.classList.add('animate__backInDown');
 
-    function animateScrollTo(targetPosition) {
-      var duration = 800; // Adjust the duration as needed
-      var start = window.scrollY;
-      var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-      function scroll() {
-        var now = 'now' in window.performance ? performance.now() : new Date().getTime();
-        var time = Math.min(1, (now - startTime) / duration);
-
-        window.scroll(0, Math.ceil((time * (targetPosition - start)) + start));
-
-        if (time < 1) {
-          requestAnimationFrame(scroll);
-        }
-      }
-
-      scroll();
+      animated = false; // Set a flag to allow the animation to be applied again
     }
   });
-  //home page scrollSource animation end//
+
+  function animateScrollTo(targetPosition) {
+    var duration = 800; // Adjust the duration as needed
+    var start = window.scrollY;
+    var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+    function scroll() {
+      var now = 'now' in window.performance ? performance.now() : new Date().getTime();
+      var time = Math.min(1, (now - startTime) / duration);
+
+      window.scroll(0, Math.ceil((time * (targetPosition - start)) + start));
+
+      if (time < 1) {
+        requestAnimationFrame(scroll);
+      }
+    }
+
+    scroll();
+  }
+}
+});
+//home page scrollSource animation end//
 
 
 if (isPhone) {
