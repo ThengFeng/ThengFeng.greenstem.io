@@ -466,49 +466,48 @@ document.addEventListener("DOMContentLoaded", function () {
   var nextContainer = document.querySelector('.auto-scroll-target');
   var animated = false;
 
-  if(scrollSource && nextContainer){
+  if (scrollSource && nextContainer) {
 
-  window.addEventListener('scroll', function () {
-    // Get the scroll position
-    var scrollPosition = window.scrollY;
+    window.addEventListener('scroll', function () {
+      // Get the scroll position
+      var scrollPosition = window.scrollY;
 
-    // Adjust this value based on when you want the animation to trigger
-    var triggerPosition = 100;
+      // Adjust this value based on when you want the animation to trigger
+      var triggerPosition = 100;
 
-    // Check if the scroll position is below the trigger position
-    if (scrollPosition > triggerPosition && !animated) {
-      scrollSource.classList.add('animate__animated', 'animate__backOutUp');
-      animated = true; // Set a flag to prevent the animation from being applied multiple times
+      // Check if the scroll position is below the trigger position
+      if (scrollPosition > triggerPosition && !animated) {
+        animateScrollTo(nextContainer.offsetTop + nextContainer.offsetHeight * 0.001);
+        scrollSource.classList.add('animate__animated', 'animate__backOutUp');
+        animated = true; // Set a flag to prevent the animation from being applied multiple times
 
-      // Scroll to the next container until it fills 80% of the screen height
-      animateScrollTo(nextContainer.offsetTop + nextContainer.offsetHeight * 0.001);
-    } else if (scrollPosition <= triggerPosition && animated) {
-      scrollSource.classList.remove('animate__backOutUp');
-      scrollSource.classList.add('animate__backInDown');
-
-      animated = false; // Set a flag to allow the animation to be applied again
-    }
-  });
-
-  function animateScrollTo(targetPosition) {
-    var duration = 800; // Adjust the duration as needed
-    var start = window.scrollY;
-    var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-    function scroll() {
-      var now = 'now' in window.performance ? performance.now() : new Date().getTime();
-      var time = Math.min(1, (now - startTime) / duration);
-
-      window.scroll(0, Math.ceil((time * (targetPosition - start)) + start));
-
-      if (time < 1) {
-        requestAnimationFrame(scroll);
+        // Scroll to the next container until it fills 80% of the screen height
+      } else if (scrollPosition <= triggerPosition && animated) {
+        scrollSource.classList.remove('animate__backOutUp');
+        scrollSource.classList.add('animate__backInDown');
+        animated = false; // Set a flag to allow the animation to be applied again
       }
-    }
+    });
 
-    scroll();
+    function animateScrollTo(targetPosition) {
+      var duration = 100; // Adjust the duration as needed
+      var start = window.scrollY;
+      var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+      function scroll() {
+        var now = 'now' in window.performance ? performance.now() : new Date().getTime();
+        var time = Math.min(1, (now - startTime) / duration);
+
+        window.scroll(0, Math.ceil((time * (targetPosition - start)) + start));
+
+        if (time < 1) {
+          requestAnimationFrame(scroll);
+        }
+      }
+
+      scroll();
+    }
   }
-}
 });
 //home page scrollSource animation end//
 
@@ -545,7 +544,136 @@ if (isPhone) {
     dropDown.classList.remove('submenu-left');
 
   })
-
-
-
 }
+
+const jsonData = [
+  //logo
+  {
+    "@context": "https://schema.org",
+    "type": "Organization",
+    "url": "https://www.greenstem.com.my",
+    "logo": "https://www.greenstem.com.my/pic/icon.webp"
+  },
+  //	Local Business
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.greenstem.com.my",
+    "name": "Greenstem Business Software Sdn Bhd",
+    "image": [
+      "https://www.greenstem.com.my/img/photo/greenstem (1).webp"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Block A, A-3-3A, Ativo Plaza",
+      "addressLocality": "Bandar Sri Damansara",
+      "addressRegion": "KL",
+      "postalCode": "52200",
+      "addressCountry": "MY"
+    },
+    //	Option
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 3.1966091,
+      "longitude": 101.6160515
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "telephone": "+603-6263 3933",
+    "email": "mailto:admin@greenstem.com.my",
+    "faxNumber": "+603-6263 7738",
+    "url": "https://www.greenstem.com.my"
+  },
+  //	FAQ
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why choose us?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `
+                      Specifically designed for spare parts to improve <strong>efficiency</strong> and <strong>productivity</strong>.
+                  `
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Achievement",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `
+                      <ul>
+                          <li>Engaged in spare parts accounting software business more than <strong>20 years</strong>.</li>
+                          <li>Installed to more than <strong>800 spare parts companies</strong>.</li>
+                      </ul>
+                  `
+        }
+      }
+    ]
+  },
+  //Product 
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "name": "Spare Parts Management & Accounting System",
+        "description": "Our specialized system for spare parts companies optimizes efficiency through real-time inventory management, automated orders, and streamlined accounting",
+        "brand": {
+          "@type": "brand",
+          "name": "Greenstem Business Software SDN BHD"
+        },
+
+        "image": [
+          "https://www.greenstem.com.my/img/photo/greenstem (1).webp"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.greenstem.com.my",
+          "price": "55.00",
+          "priceCurrency": "MYR"
+
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Workshop Management System",
+        "description": "Designed for workshops, optimizes efficiency with features like job scheduling, inventory tracking, and automated billing.",
+        "brand": {
+          "@type": "brand",
+          "name": "Greenstem Business Software SDN BHD"
+        },
+
+        "image": [
+          "https://www.greenstem.com.my/img/photo/greenstem (1).webp"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.greenstem.com.my",
+          "price": "55.00",
+          "priceCurrency": "MYR"
+        }
+      }]
+  }
+]
+
+const jsonLdScript = document.getElementById('json-ld');
+
+// Set the content of the script element to the JSON-LD data
+jsonLdScript.textContent = JSON.stringify(jsonData, null, 2);

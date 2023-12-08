@@ -1,5 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
  html {
     scroll-behavior: smooth;
@@ -38,14 +39,14 @@
  }
 
  h1 {
-    font-family: 'Livvic', sans-serif;
-    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
     font-size: 42px;
     color: rgb(68 68 68);
  }
 
  h2 {
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 32px;
     color: rgb(68 68 68);
@@ -53,14 +54,14 @@
  }
 
  h3 {
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 28px;
     color: rgb(97 97 97);
  }
 
  p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
  }
 
  button {
@@ -72,8 +73,12 @@
     text-align: center;
  }
 
- button:hover{
-   transform: scale(1.1);
+ button:not(nav button) {
+    padding: 2% 5% 2% 5%;
+ }
+
+ button:hover {
+    transform: scale(1.1);
  }
 
  small {
@@ -104,20 +109,20 @@
     position: relative;
     left: 45%;
     text-align: justify;
-    font-size: 16px;
+
  }
 
- nav a{
-   font-family: 'Livvic', sans-serif;
-   font-weight: 400 !important;
-   font-size: 16px !important;
+ nav a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300 !important;
+    font-size: 16px !important;
  }
 
- nav a:not(.excludeHover):hover{
-   color: #686868;
-   background: linear-gradient(to bottom right, #fbfefb, #ffffff);
-   transform: scale(1.05);
-   
+ nav a:not(.excludeHover):hover {
+    color: #686868;
+    background: linear-gradient(to bottom right, #fbfefb, #ffffff);
+    transform: scale(1.05);
+
  }
 
  .navbar-brand {
@@ -128,9 +133,8 @@
  }
 
  .navbar-brand p {
-    font-family: 'Livvic', sans-serif;
-    font-weight: 600;
-    color: #686868;
+    font-weight: 400;
+    color: black;
  }
 
  nav img {
@@ -145,7 +149,7 @@
  }
 
  nav button {
-    margin-top: 5%;
+    margin-top: 7%;
  }
 
  /* navigation bar multible dropdown*/
@@ -184,7 +188,8 @@
     gap: 10vw;
     font-size: 12px;
     padding-top: 1%;
-    z-index: 2;position: relative;
+    z-index: 2;
+    position: relative;
  }
 
  .text-area {
@@ -216,7 +221,7 @@
     color: black;
     background-color: rgba(247, 120, 50, 0.5);
     text-align: justify;
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 12px;
     z-index: 2;
@@ -321,7 +326,7 @@
 
  .why-us img {
     width: 25vw;
-    height: 25vh;
+    height: 30vh;
  }
 
  .why-us-1,
@@ -349,13 +354,14 @@
  .multi-devices-icon,
  .customized-report-icon {
     width: 30vw;
-    height: 30vh;
+    height: fit-content;
     background-color: rgba(255, 250, 242, 0.95);
     border: 2px solid;
     border-color: rgb(218, 230, 210);
-    margin-top: 5vh;
+    margin-top: 1%;
     margin-left: 10%;
     z-index: 1;
+    padding: 0.5%;
  }
 
  .multi-devices-desc,
@@ -363,7 +369,7 @@
     position: absolute;
     right: 15%;
     padding: 1% 2% 0 18%;
-    margin-top: 15%;
+    margin-top: 13%;
     margin-left: 25%;
     border: 3px solid #f28500;
  }
@@ -371,14 +377,15 @@
  .customer-support-icon,
  .barcode-printing-icon {
     width: 30vw;
-    height: 30vh;
+    height: fit-content;
     background-color: rgba(255, 250, 242, 0.95);
     border: 2px solid;
     border-color: rgb(218, 230, 210);
-    margin-top: 10vh;
+    margin-top: 2%;
     margin-left: 55%;
     padding-top: 3vh;
     z-index: 1;
+    padding: 0.5%;
  }
 
  .customer-support-desc,
@@ -387,25 +394,25 @@
     width: 50vw;
     right: 35vw;
     padding: 1% 15% 0 5%;
-    margin-top: 55vh;
+    margin-top: 32%;
     margin-left: 15%;
     border: 3px solid #f28500;
  }
 
  .customized-report-desc {
-    margin-top: 22vh;
+    margin-top: 9%;
     padding-right: 5%;
     right: 20vw;
  }
 
  .barcode-printing-icon {
-    margin-top: 10vh;
+    margin-top: 0%;
  }
 
  .barcode-printing-desc {
-    margin-top: 50vh;
     padding-left: 4%;
     left: 5vw;
+    margin-top: 30%;
  }
 
  .customized-report-icon,
@@ -477,6 +484,10 @@
     height: 100vh;
  }
 
+ .carousel-item.testimonial-carousel {
+    height: 80vh;
+ }
+
  .carousel-content.testimonial-carousel {
     padding: 5%;
     width: 80%;
@@ -485,6 +496,7 @@
     margin-top: 10vh;
     box-shadow: 2vh 2vh 50px #face99;
     background-color: #d9e4db;
+    height: 60vh;
  }
 
  .carousel-content.testimonial-carousel header {
@@ -508,10 +520,37 @@
     margin-top: -10vh;
  }
 
+ blockquote::after {
+    content: "\201D";
+    font-size: 150px;
+    position: absolute;
+    font-family: serif;
+    font-weight: bold;
+    opacity: .5;
+    right: 5%;
+    margin-top: -15vh;
+ }
+
  .carousel-content.testimonial-carousel p {
 
     width: 80%;
     margin-left: 10%;
+ }
+
+ .material-symbols-outlined.back {
+   font-size: 150px !important;
+   color: #868686;
+   margin-top: -60%;
+   left: 2%;
+   position: absolute;
+ }
+
+ .material-symbols-outlined.next {
+   font-size: 150px !important;
+   color: #868686;
+   margin-top: -60%;
+   right: 2%;
+   position: absolute;
  }
 
  /*index end*/
@@ -536,7 +575,7 @@
  }
 
  label {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: rgb(97, 97, 97);
@@ -586,14 +625,13 @@
  }
 
  h4 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: rgb(97, 97, 97);
  }
 
  .company-contact p {
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: rgb(97, 97, 97);
@@ -735,7 +773,8 @@
  }
 
  .module-carousel-item.active,
- .module-carousel-item.active h3,.module-carousel-item.workshop.active,
+ .module-carousel-item.active h3,
+ .module-carousel-item.workshop.active,
  .module-carousel-item.workshop.active h3 {
     background: #FFA500;
     color: white;
@@ -862,227 +901,243 @@
  /*Spare parts management system end*/
 
  /*Work shop*/
- 
+
  .carousel-container.workshop {
-   position: relative;
-   margin-top: 10vh;
-   width: 20vw;
-   height: 25vh;
-   perspective: 1500px;
-   margin-left: 25vw;
-}
+    position: relative;
+    margin-top: 10vh;
+    width: 20vw;
+    height: 25vh;
+    perspective: 1500px;
+    margin-left: 25vw;
+ }
 
-.module-carousel.workshop{
-   height: 100%;
-   width: 100%;
-   position: absolute;
-   transform-style: preserve-3d;
-   transition: transform 1s;
-}
+ .module-carousel.workshop {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+ }
 
-.module-carousel-item.workshop {
-   display: block;
-   position: absolute;
-   background: #fef4e8;
-   width: max-content;
-   height: max-content;
-   padding: 5%;
-   text-align: center;
-   color: black;
-   opacity: 0.95;
-   border-radius: 10px;
-   transition: background 0.3s;
-    
-}
+ .module-carousel-item.workshop {
+    display: block;
+    position: absolute;
+    background: #fef4e8;
+    width: max-content;
+    height: max-content;
+    padding: 5%;
+    text-align: center;
+    color: black;
+    opacity: 0.95;
+    border-radius: 10px;
+    transition: background 0.3s;
 
-
-.billing-service-record-module{ transform: rotateY(0deg) translateZ(250px); }
-.stock-control-module { transform: rotateY(120deg) translateZ(250px); }
-.full-set-accountant { transform: rotateY(240deg) translateZ(250px); }
+ }
 
 
-#workshop-next{
-   font-size: 100px;
-   position: absolute;
-   color: #FFA500;
-   margin-top: 9vh;
-   right: 1%;
-}
+ .billing-service-record-module {
+    transform: rotateY(0deg) translateZ(250px);
+ }
 
-#workshop-prev{
-   font-size: 100px;
-   position: absolute;
-   color: #FFA500;
-   margin-top: 9vh;
-   right: 48%;
-   
-}
+ .stock-control-module {
+    transform: rotateY(120deg) translateZ(250px);
+ }
+
+ .full-set-accountant {
+    transform: rotateY(240deg) translateZ(250px);
+ }
+
+
+ #workshop-next {
+    font-size: 100px;
+    position: absolute;
+    color: #FFA500;
+    margin-top: 9vh;
+    right: 1%;
+ }
+
+ #workshop-prev {
+    font-size: 100px;
+    position: absolute;
+    color: #FFA500;
+    margin-top: 9vh;
+    right: 48%;
+
+ }
 
  /*workshop end*/
 
  /*about us */
  .intro.about-us {
-   background-image: url('../greenstem/pic/greenstem-group-photo.JPG');
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-size: 100% 100%;
-}
+    background-image: url('../greenstem/pic/greenstem-group-photo.JPG');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+ }
 
 
-.intro.about-us,
-.gallery {
-   display: block;
-   position: relative;
-   height: 100vh;
-   z-index: -1;
-   text-align: center;
-}
+ .intro.about-us,
+ .gallery {
+    display: block;
+    position: relative;
+    height: 100vh;
+    z-index: -1;
+    text-align: center;
+ }
 
-.intro.about-us .container-fluid {
-   position: absolute;
-   bottom: 0;
-   height: 30vh;
-   background-color: rgba(241, 253, 243, 0.8);
-   padding: 5vh 10vw 0 10vw;
-}
+ .intro.about-us .container-fluid {
+    position: absolute;
+    bottom: 0;
+    height: 30vh;
+    background-color: rgba(241, 253, 243, 0.8);
+    padding: 5vh 10vw 0 10vw;
+ }
 
-.value .container-fluid {
-   display: grid;
-   grid-template-rows: 50% 50%;
-   background-color: rgb(255, 250, 242);
-   height: 100vh;
-   padding-top: 10vh;
-}
+ .value .container-fluid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    background-color: rgb(255, 250, 242);
+    height: max-content;
+    padding-bottom: 5%;
+    padding-top: 10vh;
+ }
 
-.vision,
-.mission {
-   display: flex;
-   gap: 5vw;
-   margin-top: 5vh;
-   margin-left: 10%;
-   width: 80%;
-   padding-left: 5vw;
-}
+ .vision,
+ .mission {
+    display: flex;
+    gap: 5vw;
+    margin-top: 5vh;
+    margin-left: 10%;
+    width: 80%;
+    padding-left: 5vw;
+ }
 
-.vision.animation,
-.mission.animation {
-   --animate-duration: 3.5s;
-}
+ .vision.animation,
+ .mission.animation {
+    --animate-duration: 3.5s;
+ }
 
+ .value img {
+    width: 25%;
+    height: auto;
+    box-shadow: 20px 20px 50px #d9e4db;
+ }
 
+ .value-desc,
+ .mission-desc {
+    padding-top: 15vh;
+    text-align: center;
+    padding-left: 2vw;
+ }
 
-.value img {
-   width: 30vw;
-   height: 30vh;
-   box-shadow: 20px 20px #d9e4db;
-}
+ .gallery img {
+    width: auto;
+    height: 70vh;
+ }
 
-.value-desc,
-.mission-desc {
-   padding-top: 15vh;
-   text-align: center;
-   padding-left: 2vw;
-}
+ .gallery {
+    text-align: center;
+    height: max-content;
+    padding-top: 5vh;
+    padding-bottom: 5%;
+    z-index: 1;
+ }
 
-.gallery .container-fluid {
-   text-align: center;
-   height: 120vh;
-   padding-top: 5vh;
-}
+ .gallery .carousel.slide {
+    margin-top: 2%;
+    width: 80%;
+    margin-left: 10%;
+    background: linear-gradient(to top, #000000, #808080);
+    padding: 2%;
+ }
 
-.gallery {
-   height: 120vh;
-}
+ .carousel-caption.d-none.d-md-block {
+    background-color: rgba(245, 245, 245, 0.8);
+    color: black;
+    bottom: 0;
+    height: 10%;
+ }
 
-.carousel.slide {
-   margin-top: 5vh;
-}
+ .timeLine {
+    background-color: rgba(241, 253, 243, 0.8);
+    padding: 2%;
+ }
 
-.carousel-caption.d-none.d-md-block {
-   background-color: rgba(245, 245, 245, 0.8);
-   color: black;
-}
+ .timeLine h2 {
+    text-align: center;
+    margin-left: 8vw;
+    margin-bottom: 10vh;
+ }
 
-.timeLine {
-   margin-top: 10ch;
-   background-color: rgba(241, 253, 243, 0.8);
-   padding: 2%;
+ .image img {
+    width: 45vw;
+    height: auto;
+ }
 
-}
-
-.timeLine h2 {
-   text-align: center;
-   margin-left: 8vw;
-   margin-bottom: 10vh;
-}
-
-.image img {
-   width: 45vw;
-   height: 50vh;
-}
-
-.timeline-container .title {
-   text-align: center;
-   position: absolute;
-   left: 3vh;
-   z-index: 1;
-   background-color: rgba(255, 255, 255, 1);
-   padding: 2vh;
-   border-radius: 100%;
-}
-
-
-.timeline-container {
-   position: relative;
-   width: 100%;
-   height: max-content;
-   background-color: #d9e4db;
-}
-
-.timeline-container .image {
-   left: 30%;
-   padding-top: 10vh;
-   position: relative;
-   width: max-content;
-}
-
-.timeline-container .text-box {
-   width: 50vw;
-   text-align: center;
-   position: relative;
-   margin: 0 25vw 0 25vw;
-   padding: 2vh 1vw 1vh 2vw;
-}
+ .timeline-container .title {
+    text-align: center;
+    position: absolute;
+    left: 3%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 100px;
+    padding: 0% 2% 0% 2%;
+    width: 10%;
+ }
 
 
+ .timeline-container {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    background-color: #d9e4db;
+ }
 
-.line::before {
-   content: '';
-   position: absolute;
-   width: 5px;
-   height: 0;
-   background-color: orange;
-   top: 0;
-   left: 4vw;
-   transition: height 2.5s linear 0s;
-}
+ .timeline-container .image {
+    left: 30%;
+    padding-top: 10vh;
+    position: relative;
+    width: max-content;
+ }
 
-.line.active::before{
-   height: 100%;
-}
+ .timeline-container .text-box {
+    width: 50vw;
+    text-align: center;
+    position: relative;
+    margin: 0 25vw 0 25vw;
+    padding: 2vh 1vw 1vh 2vw;
+ }
 
 
-.timeline-container:nth-last-child(1){
-   height: 40vh;
-}
 
-.timeline-container:nth-last-child(1) .text-box{
- padding-top: 15vh;
-}
+ .line::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 0;
+    background-color: orange;
+    top: 0;
+    left: 8%;
+    transition: height 2.5s linear 0s;
+ }
 
-.text-box.animation{
-   --animate-duration: 2.5s;
-}
+ .line.active::before {
+    height: 100%;
+ }
+
+
+ .timeline-container:nth-last-child(1) {
+    height: 40vh;
+ }
+
+ .timeline-container:nth-last-child(1) .text-box {
+    padding-top: 15vh;
+ }
+
+ .text-box.animation {
+    --animate-duration: 2.5s;
+ }
+
  /*about us end*/
 
  @media (max-width: 991.98px) {
@@ -1115,6 +1170,10 @@
        padding-top: 0;
     }
 
+    nav p {
+       left: 29%;
+    }
+
     .navbar-nav {
        display: inline-block;
        text-align: left;
@@ -1132,7 +1191,9 @@
     }
 
     footer .logo {
-       margin: 0 40% 5% 40%;
+       margin: 0 0 5% 0;
+       width: 100%;
+       text-align: center;
     }
 
     .logo img {
@@ -1304,6 +1365,7 @@
        height: max-content;
        padding-bottom: 10%;
     }
+
     /*contact us end*/
 
     /*spare part management system & workshop system*/
@@ -1354,13 +1416,13 @@
        position: relative;
     }
 
-    .carousel-container.workshop{
-      margin-top: 15%;
-      margin-left: 40%;
-      position: relative;
+    .carousel-container.workshop {
+       margin-top: 15%;
+       margin-left: 40%;
+       position: relative;
     }
 
-    .module-carousel-item{
+    .module-carousel-item {
        width: max-content;
        height: max-content;
        padding: 10% 15% 10% 15%;
@@ -1372,25 +1434,26 @@
        margin-top: -18%;
     }
 
-    #workshop-next{
-      right: 0;
-      margin-bottom: 0%;
-      margin-top: -35%;
-   
+    #workshop-next {
+       right: 0;
+       margin-bottom: 0%;
+       margin-top: -35%;
+
     }
 
-    #workshop-prev{
-      margin-top: -35%;
-      left: -35%;
+    #workshop-prev {
+       margin-top: -35%;
+       left: -35%;
     }
 
-    #prev{
+    #prev {
        margin-top: -18%;
        left: 0;
 
     }
-    .preview{
-      height: max-content;
+
+    .preview {
+       height: max-content;
     }
 
     .preview .container-fluid .description.active {
@@ -1399,59 +1462,78 @@
     }
 
     .description .image {
-      width: 90%;
-      padding: 0 0 5% 0;
-      margin: 0 5% 0 5%;
-      display: block;
+       width: 90%;
+       padding: 0 0 5% 0;
+       margin: 0 5% 0 5%;
+       display: block;
     }
 
     .description .image small {
-      width: 40%;
-      margin: 0 30% 0 30%;
+       width: 40%;
+       margin: 0 30% 0 30%;
     }
 
-    .description-text{
-      padding: 0;
-      width: 80%;
-      padding-bottom: 10%;
-      margin: 0 10% 0 10%;
-    }
-       /*spare part management system & workshop system end*/
-
-
-/*about us*/
-    .intro.about-us .container-fluid{
-      height: max-content;
-      padding: 1% 2% 1% 2%;
+    .description-text {
+       padding: 0;
+       width: 80%;
+       padding-bottom: 10%;
+       margin: 0 10% 0 10%;
     }
 
-    .value .container-fluid{
-      padding-top: 5%;
+    /*spare part management system & workshop system end*/
+
+
+    /*about us*/
+    .intro.about-us .container-fluid {
+       height: max-content;
+       padding: 1% 2% 1% 2%;
     }
 
-    .line::before{
-      left: 11.5%;
+    .value .container-fluid {
+       padding-top: 5%;
     }
 
-    .timeline-container .text-box{
-      width: 80%;
-      margin: 0 0 0 20%;
+    .line::before {
+       left: 11.5%;
     }
 
-    .timeLine p{
-      
-      font-size: 12px;
+    .timeline-container .title {
+       width: 20%;
+    }
+
+    .timeline-container .text-box {
+       width: 80%;
+       margin: 0 0 0 20%;
+    }
+
+    .timeLine p {
+       font-size: 12px;
+    }
+
+    .gallery img {
+       height: 50vh;
+    }
+
+    .gallery .carousel.slide {
+       margin-top: 2%;
+       width: 100%;
+       margin-left: 0;
+       background: linear-gradient(to top, #000000, #808080);
+       padding: 2%;
+    }
+
+    .value img {
+       width: 50vw;
+    }
+
+    .vision,
+    .mission {
+       margin-left: 0;
+       padding-left: 0;
+       width: 100%;
     }
 
     /*about us end*/
-
-
-
-
-
-
-
-
 
 
 
