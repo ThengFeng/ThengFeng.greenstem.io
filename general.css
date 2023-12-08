@@ -1308,6 +1308,24 @@
        left: 0;
        margin-top: -10%;
     }
+    blockquote::after {
+      font-size: 100px;
+      margin-top: -25%;
+   }
+
+    .material-symbols-outlined.back {
+display: none;
+    }
+   
+    .material-symbols-outlined.next {
+display: none;
+    }
+        .carousel-content.testimonial-carousel{
+      height: 85%;
+    }
+    .carousel-content.testimonial-carousel p{
+      font-size: 12px;
+    }
 
     /*index end*/
 
