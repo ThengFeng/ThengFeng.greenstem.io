@@ -209,7 +209,7 @@ body {
     margin-bottom: 2%;
 }
 
-.why-us{
+.feature{
     text-align: center;
     margin:7% 10% 5% 10%;
     padding: 1%;
@@ -220,13 +220,13 @@ body {
     padding-bottom: 10%;
 }
 
-.why-us-content-container{
+.feature-content-container{
     display: flex;
     margin-top: 5%;
     gap: 2%;
 }
 
-.why-us-content{
+.feature-content{
     padding: 4% 2%;
     border: 1px solid gray;
     border-radius: 10px 10px 50px 10px;
@@ -235,13 +235,30 @@ body {
 
 }
 
-.why-us-content:hover{
+.feature-content:hover{
     background-color: black;
     color: white;
     transform: scale(1.05);
     transition: all 0.25s ease-in;
 }
 
+.why-select-us{
+    display: flex;
+    gap: 2%;
+}
+.why-select-us-content{
+    flex: 4;
+    background-color: black;
+}
+.pic1{
+    flex: 2;
+    background-color: aqua;
+}
+
+.pic2{
+    flex: 3;
+    background-color: blue;
+}
 
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
