@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    font-family: 'Open Sans', sans-serif;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: rgba(247, 120, 20, 1);
+    border-style: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*navigation bar*/
+nav {
+    top: 0%;
+    position: fixed !important;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white;
+    height: 8%;
+    width: 100%;
+
+}
+
+
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300 !important;
+    font-size: 16px !important;
+}
+
+
+.navbar-brand {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: 10vh;
+    padding-top: 0;
+}
+
+nav img {
+    margin-left: 10vw;
+    height: 10%;
+    margin-top: 20%;
+}
+
+
+nav .navbar-collapse {
+    padding-right: 10vw;
+}
+
+nav .dropdown-menu, .nav-link.dropdown-toggle {
+    border: none;
+}
+
+nav .dropdown-item:hover {
+    background-color: transparent;
+}
+
+.dropdown-toggle{
+    border: none;
+}
+nav .dropdown-toggle::after {
+    opacity: 0;
+}
+
+nav .nav-item {
+    width: 100px;
+    text-align: center;
+}
+
+nav .nav-link:hover{
+    color: red;
+    transition: all 0.2s ease-in;
+}
+
+nav .nav-link::after{
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    content: "";
+    opacity: 0;
+    -webkit-transition: width 0.6s, opacity 0.8s;
+    -moz-transition: width 0.6s, opacity 0.8s;
+    transition: width 0.6s, opacity 0.8s;
+}
+
+nav .nav-link:hover::after{
+    opacity: 1;
+    width: 100%;
+}
+/* navigation bar multible dropdown*/
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu .submenu-left {
+    right: 100%;
+    left: auto;
+}
+
+
+.dropdown-menu>li:hover>.submenu {
+    display: block;
+}
+
+
+
+/*navigation bar end*/
+
+body {
+    height: 1000px;
+}
+
+.wave-container {
+    display: block;
+    padding: 0;
+}
+
+.waves {
+    width: 100vw;
+    height: 35vh;
+    background-color: green;
+
+}
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+
+.title {
+    text-align: justify;
+    position: absolute;
+    left: 15%;
+    top: 15%;
+}
+
+.title button {
+    width: 15%;
+
+}
+
+.title h1,
+.title h2 {
+    margin-bottom: 2%;
+}
+
+.why-us{
+    text-align: center;
+    margin:7% 10% 5% 10%;
+    padding: 1%;
+    height: max-content;
+    border: 1px solid gray;
+    border-radius: 25px;
+    width: 80%;
+    padding-bottom: 10%;
+}
+
+.why-us-content-container{
+    display: flex;
+    margin-top: 5%;
+    gap: 2%;
+}
+
+.why-us-content{
+    padding: 4% 2%;
+    border: 1px solid gray;
+    border-radius: 10px 10px 50px 10px;
+    text-align: justify;
+    transition: all 0.25s ease-in;
+
+}
+
+.why-us-content:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.25s ease-in;
+}
+
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

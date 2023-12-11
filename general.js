@@ -632,7 +632,7 @@ const jsonData = [
     "@type": "ItemList",
     "itemListElement": [
       {
-        "@type": "Product",
+        "@type": "SoftwareApplication",
         "name": "Spare Parts Management & Accounting System",
         "description": "Our specialized system for spare parts companies optimizes efficiency through real-time inventory management, automated orders, and streamlined accounting",
         "brand": {
@@ -643,16 +643,14 @@ const jsonData = [
         "image": [
           "https://www.greenstem.com.my/img/photo/greenstem (1).webp"
         ],
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.greenstem.com.my",
-          "price": "55.00",
-          "priceCurrency": "MYR"
-
-        }
+        "applicationCategory":"Business / Workshop",
+        "availableOnDevice":"PC & Mobile",
+        "featureList":"https://www.greenstem.com.my",
+        "inLanguage":"English",
+        "operatingSystem":"Windows"
       },
       {
-        "@type": "Product",
+        "@type": "SoftwareApplication",
         "name": "Workshop Management System",
         "description": "Designed for workshops, optimizes efficiency with features like job scheduling, inventory tracking, and automated billing.",
         "brand": {
@@ -663,12 +661,11 @@ const jsonData = [
         "image": [
           "https://www.greenstem.com.my/img/photo/greenstem (1).webp"
         ],
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.greenstem.com.my",
-          "price": "55.00",
-          "priceCurrency": "MYR"
-        }
+        "applicationCategory":"Business / Workshop",
+        "availableOnDevice":"PC & Mobile",
+        "featureList":"https://www.greenstem.com.my",
+        "inLanguage":"English",
+        "operatingSystem":"Windows"
       }]
   }
 ]
@@ -677,3 +674,46 @@ const jsonLdScript = document.getElementById('json-ld');
 
 // Set the content of the script element to the JSON-LD data
 jsonLdScript.textContent = JSON.stringify(jsonData, null, 2);
+
+//footer
+// Create footer element
+const footer = document.createElement('footer');
+footer.className = 'container-fluid';
+
+// Create logo div
+const logoDiv = document.createElement('div');
+logoDiv.className = 'logo';
+
+// Create logo image
+const logoImg = document.createElement('img');
+logoImg.src = '../greenstem/pic/icon.webp';
+logoImg.alt = 'company logo';
+
+// Append logo image to logo div
+logoDiv.appendChild(logoImg);
+
+// Create text area div
+const textAreaDiv = document.createElement('div');
+textAreaDiv.className = 'text-area';
+
+// Create first paragraph with contact information
+const contactParagraph = document.createElement('p');
+contactParagraph.className = 'text-end footer-text';
+contactParagraph.innerHTML = '<b>P</b> : (6)03 6263 3933 &nbsp;&nbsp;&nbsp; <b>E</b> : admin@greenstem.com.my';
+
+// Create second paragraph with copyright information
+const copyrightParagraph = document.createElement('p');
+copyrightParagraph.className = 'text-end footer-text';
+const currentYear = new Date().getFullYear();
+copyrightParagraph.textContent = `©${currentYear} Greenstem Business Software Sdn Bhd (387389-H) - All rights reserved`;
+
+// Append paragraphs to text area div
+textAreaDiv.appendChild(contactParagraph);
+textAreaDiv.appendChild(copyrightParagraph);
+
+// Append logo div and text area div to the footer
+footer.appendChild(logoDiv);
+footer.appendChild(textAreaDiv);
+
+// Append the footer to the document body or any other container
+document.body.appendChild(footer);
