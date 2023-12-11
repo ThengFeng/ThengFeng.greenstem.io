@@ -625,51 +625,6 @@ const jsonData = [
         }
       }
     ]
-  },
-  //Product 
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "Product",
-        "name": "Spare Parts Management & Accounting System",
-        "description": "Our specialized system for spare parts companies optimizes efficiency through real-time inventory management, automated orders, and streamlined accounting",
-        "brand": {
-          "@type": "brand",
-          "name": "Greenstem Business Software SDN BHD"
-        },
-
-        "image": [
-          "https://www.greenstem.com.my/img/photo/greenstem (1).webp"
-        ],
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.greenstem.com.my",
-          "price": "55.00",
-          "priceCurrency": "MYR"
-
-        }
-      },
-      {
-        "@type": "Product",
-        "name": "Workshop Management System",
-        "description": "Designed for workshops, optimizes efficiency with features like job scheduling, inventory tracking, and automated billing.",
-        "brand": {
-          "@type": "brand",
-          "name": "Greenstem Business Software SDN BHD"
-        },
-
-        "image": [
-          "https://www.greenstem.com.my/img/photo/greenstem (1).webp"
-        ],
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.greenstem.com.my",
-          "price": "55.00",
-          "priceCurrency": "MYR"
-        }
-      }]
   }
 ]
 
@@ -677,3 +632,4 @@ const jsonLdScript = document.getElementById('json-ld');
 
 // Set the content of the script element to the JSON-LD data
 jsonLdScript.textContent = JSON.stringify(jsonData, null, 2);
+
