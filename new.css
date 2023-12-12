@@ -6,7 +6,6 @@ html {
     /* Firefox */
     -ms-overflow-style: none;
     /* IE and Edge */
-    font-family: 'Open Sans', sans-serif;
 }
 
 html::-webkit-scrollbar {
@@ -16,10 +15,11 @@ html::-webkit-scrollbar {
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
 }
-
+.content{
+    padding: 0;
+}
 button {
     background-color: rgba(247, 120, 20, 1);
     border-style: none;
@@ -39,8 +39,8 @@ nav {
     top: 0%;
     position: fixed !important;
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    color: black;
     height: 8%;
     width: 100%;
 
@@ -55,16 +55,14 @@ nav a {
 
 
 .navbar-brand {
-    display: grid;
-    grid-template-columns: 10% 90%;
-    height: 10vh;
-    padding-top: 0;
+    display: flex;
+    padding: 0;
+    height: 100%;
 }
 
 nav img {
     margin-left: 10vw;
-    height: 10%;
-    margin-top: 20%;
+    height: 7vh;
 }
 
 
@@ -72,7 +70,8 @@ nav .navbar-collapse {
     padding-right: 10vw;
 }
 
-nav .dropdown-menu, .nav-link.dropdown-toggle {
+nav .dropdown-menu,
+.nav-link.dropdown-toggle {
     border: none;
 }
 
@@ -80,9 +79,10 @@ nav .dropdown-item:hover {
     background-color: transparent;
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
     border: none;
 }
+
 nav .dropdown-toggle::after {
     opacity: 0;
 }
@@ -92,18 +92,18 @@ nav .nav-item {
     text-align: center;
 }
 
-nav .nav-link:hover{
+nav .nav-link:hover {
     color: red;
     transition: all 0.2s ease-in;
 }
 
-nav .nav-link::after{
+nav .nav-link::after {
     display: block;
     margin: 0 auto;
     margin-top: 5px;
     width: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: #868686;
     content: "";
     opacity: 0;
     -webkit-transition: width 0.6s, opacity 0.8s;
@@ -111,10 +111,11 @@ nav .nav-link::after{
     transition: width 0.6s, opacity 0.8s;
 }
 
-nav .nav-link:hover::after{
+nav .nav-link:hover::after {
     opacity: 1;
     width: 100%;
 }
+
 /* navigation bar multible dropdown*/
 .dropdown-menu li {
     position: relative;
@@ -141,9 +142,6 @@ nav .nav-link:hover::after{
 
 /*navigation bar end*/
 
-body {
-    height: 1000px;
-}
 
 .wave-container {
     display: block;
@@ -152,9 +150,9 @@ body {
 
 .waves {
     width: 100vw;
-    height: 35vh;
-    background-color: green;
-
+    height: 45vh;
+    background: #29A87A;
+    
 }
 
 .parallax>use {
@@ -197,6 +195,7 @@ body {
     position: absolute;
     left: 15%;
     top: 15%;
+    color: white;
 }
 
 .title button {
@@ -209,57 +208,239 @@ body {
     margin-bottom: 2%;
 }
 
-.feature{
+.title button{
+    background-color: #624DE7;
+}
+
+.feature {
     text-align: center;
-    margin:7% 10% 5% 10%;
+    margin: 7% 10% 5% 10%;
     padding: 1%;
     height: max-content;
-    border: 1px solid gray;
     border-radius: 25px;
     width: 80%;
     padding-bottom: 10%;
+    box-shadow: 10px 10px 20px #ECE8E8;
 }
 
-.feature-content-container{
+.feature-content-container {
     display: flex;
     margin-top: 5%;
-    gap: 2%;
+    gap: 5%;
 }
 
-.feature-content{
+.feature-content {
+    width: 70%;
     padding: 4% 2%;
-    border: 1px solid gray;
     border-radius: 10px 10px 50px 10px;
-    text-align: justify;
+    text-align: start;
     transition: all 0.25s ease-in;
-
+    color: black;
+    word-spacing: normal;
+    box-shadow: 1px 1px 50px #F7EDFF;
 }
 
-.feature-content:hover{
-    background-color: black;
+.feature-content h4{
+    color:#29A87A;
+}
+
+.feature-content:hover {
+    background: #29A87A;
     color: white;
     transform: scale(1.05);
     transition: all 0.25s ease-in;
 }
 
-.why-select-us{
+.feature-content:hover h4{
+    color: white;
+}
+
+.why-select-us {
     display: flex;
     gap: 2%;
-}
-.why-select-us-content{
-    flex: 4;
-    background-color: black;
-}
-.pic1{
-    flex: 2;
-    background-color: aqua;
+    width: 80%;
+    margin-left: 10%;
+    height: 75vh;
+    margin-top: 10vh;
 }
 
-.pic2{
+.why-select-us-content {
+    flex: 4;
+    padding-top: 5%;
+}
+
+.why-select-us-content h2 {
+    margin-bottom: 5%;
+}
+.why-select-us-content h5 {
+    color: #29A87A;
+}
+
+.why-select-us-content strong {
+    font-size: 42px;
+    color: #624DE7;
+}
+
+.accordion-item {
+    margin-bottom: 2%;
+    width: 80%;
+    margin-left: 5%;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    cursor: pointer;
+    width: 65%;
+}
+
+.accordion-header .accordion-text {
+    font-size: 24px;
+}
+
+.accordion-symbol {
+    color: #29A87A;
+    transition: all 0.5s ease-in;
+}
+
+.accordion-expanded .accordion-symbol {
+    transform: rotate(180deg);
+}
+
+.accordion-body {
+    margin-left: 8%;
+    font-size: 14px;
+    padding-bottom: 2%;
+    max-height: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transform-origin: top;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    color: #575757;
+}
+
+.pic1 {
+    flex: 2;
+    height: 60%;
+    margin-top: 10%;
+    background: url('../greenstem/pic/customer_servies_bg.jpg') center/cover no-repeat;
+    border-radius: 10px;
+}
+
+.pic2 {
     flex: 3;
     background-color: blue;
+    border-radius: 10px;
 }
 
+.product-container{
+    height: 45vh;
+    background-color: #29A87A;
+    display: flex;
+    margin-top: 15vh;
+    color: white;
+}
+
+.product-content img{
+    padding-bottom: 2%;
+}
+
+.product-content{
+    text-align: center;
+    padding-top: 4%;
+    height: 100%;
+    width: 50%;
+}
+.product-content:hover{
+    padding-top: 2%;
+    font-size: larger;
+    transition: all 0.5s ease-in-out;
+}
+
+.product-content:hover .product-desc{
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.sparePart{
+    border-right: 1px solid #FFF9F9;
+}
+
+.product-desc{
+    padding: 2% 10%;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+
+.after-sales-service{
+    margin-top: 15vh;
+    width: 70%;
+    margin-left: 15%;
+    text-align: center;
+
+}
+
+.line1{
+    color: #624DE7;
+}
+
+.line2{
+margin: 2% auto 5% auto;
+}
+
+.line3 span{
+    color: #29A87A;
+}
+
+.after-sales-service-container{
+    width: 100%;
+    display: flex;
+    gap: 5%;
+}
+
+.after-sales-service-content{
+    width: 30%;
+    padding: 7% 2%;
+    margin-top: 5%;
+    box-shadow: 0 4px 100px #F3E4FF;
+}
+
+.text-area{
+    margin-top: 10%;
+}
+
+.after-sales-service button{
+    background-color: #29A87A;
+    padding: 0.5% 2%;
+    margin-top: 5%;
+}
+.feedback{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 15vh;
+    text-align: center;
+}
+
+footer{
+    background-image: url('../greenstem/new-pic/footer-bg.svg');
+    height: 100px;
+    padding-top: 5%;
+    margin-top: 15vh;
+}
+
+footer .contact-list{
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    gap: 5%;
+}
+
+footer .contact-list-element{
+    width: 70%;
+    background-color: black;
+}
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
     .waves {
